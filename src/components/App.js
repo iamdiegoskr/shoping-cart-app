@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import 'semantic-ui-css/semantic.min.css'
 
 import '../index.css'
 import { _getPhones } from '../utils/_DATA'
@@ -16,7 +17,6 @@ class App extends Component {
   }
   render(){
     const { phones } = this.props
-  
     return (
       <Container phones={phones} />
     );
