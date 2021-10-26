@@ -11,12 +11,13 @@ const phoneSpec = {
         return{
             name: props.brand,
             id: props.id
+            
         }
     },
     endDrag(props, monitor, component){
         if (monitor.didDrop()){
             const dragItem = monitor.getItem();
-            const dropResult = monitor.getDropResult();
+            const dropResult = monitor.getDropResult();           
             console.log("You dropped ", dragItem.name, ' into '+ dropResult.name)
              // Move action goes here
             props.dispatch(moveIncart(dragItem.id))
@@ -74,4 +75,3 @@ function mapStateToProps({phones}){
     }
 }
 export default connect(mapStateToProps)(DragSource(ItemTypes.PHONE, phoneSpec, collect)(Phone));
-

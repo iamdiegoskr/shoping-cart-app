@@ -1,23 +1,33 @@
 let phones = {
     Techno:{
         brand: "Techno",
-        inCart: 'false' // or "in"
+        inCart: 'false',
+        capacity: "6G RAM, 128G memory",
+        price: 750.000
     },
     Apple:{
         brand: "Iphone",
-        inCart: "false"
+        inCart: "false",
+        capacity: "8G RAM, 128G memory",
+        price: 800.99
     },
     Samsung:{
         brand: "Samsung",
-        inCart: "false" 
+        inCart: "false",
+        capacity: "4G RAM, 64G memory",
+        price: 350.99
     },
     Hauwei:{
         brand: "Hauwei",
-        inCart: "true"
+        inCart: "false",
+        capacity: "4G RAM, 128G memory",
+        price: 550.99
     },
     HTC:{
         brand: "HTC",
-        inCart: "true"
+        inCart: "false",
+        capacity: "4G RAM, 264G memory",
+        price: 750.99
     }
 }
 

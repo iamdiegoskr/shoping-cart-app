@@ -18,7 +18,6 @@ class DisplayPhone extends Component {
 }
 
 function mapStateToProps({phones}){
-
     return{
         phones,
     }

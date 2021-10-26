@@ -12,24 +12,25 @@ class Container extends Component {
     render(){
         const { inCart_phones, outCart_phones } = this.props
         return(
-            <div className="ui container">
+            <div class="ui container">
                 <div className="main-header">
-                    <h2 className="ui icon center aligned header">
-                        <i aria-hidden="true" className="mobile circular icon"></i>
-                        <div className="content title">Phone Shope</div>
+                    <h2 class="ui icon center aligned header">
+                        <i aria-hidden="true" class="mobile circular icon"></i>
+                        <div class="content title">Phone Shop</div>
                     </h2>
                 </div>
-                <div className="ui grid">
+                <div class="ui grid">
                 <h1 className="mycart-header">My cart</h1>
-                    <div className="left floated five wide column my-cart">
-                        <MyCart />
-                    </div>
-                <div className="right floated five wide column">
+                <div class="left floated five wide column my-cart">
+                <a class="ui red ribbon label">{inCart_phones.length} Phone(s)</a>
+                <MyCart inCart_phones = {inCart_phones} />
+                </div>
+                <div class="right floated five wide column">
                     <DndProvider backend={ HTML5Backend } >
-                        <div className="ui row">
-                            <h3 className="brand-heading">Phone Brands</h3>
+                        <div class="ui row">
+                            <h3 class="brand-heading">Phone Brands</h3>
                         </div>
-                        <div className="ui row">
+                        <div class="ui row">
                             <div className="shopping-list">
                                 <DisplayPhone displayPhones = {outCart_phones} />
                             </div>
@@ -48,7 +49,7 @@ function mapStateToProps({phones}){
     const outCart_phones = Object.keys(phones).filter((phone) => !inCart_phones.includes(phone))
 
     return{
-        inCart_phones,
+        inCart_phones: inCart_phones.sort((a,b) => phones[b].timestamp - phones[a].timestamp),
         outCart_phones,
     }
 }
